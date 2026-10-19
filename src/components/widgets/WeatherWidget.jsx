@@ -24,12 +24,16 @@ export default function WeatherWidget(){
     }
 
     return(
-        <div className="bg-red-900 rounded-2x1 p-6 shadow-md">
-            <div className="current-day-temp">
-                <h1>{Math.round(currentWeatherObj.temperature_2m)}°F</h1>
-                <p>{weatherCodes[currentWeatherObj.weather_code] || "Unknown Weather"}</p>
-                <p>High: {Math.round(currentWeather.daily.temperature_2m_max[0])}°</p>
-                <p>Low: {Math.round(currentWeather.daily.temperature_2m_min[0])}°</p>
+        <div className="bg-red-900 rounded-2x1 p-6 flex">
+            <div className="flex">
+                <div>
+                    <h1 className="text-[80px] bg-blue-400">{Math.round(currentWeatherObj.temperature_2m)}°F</h1>
+                    <p className="bg-green-200">{weatherCodes[currentWeatherObj.weather_code] || "Unknown Weather"}</p>
+                </div>
+                <div className="">
+                    <p>High: {Math.round(currentWeather.daily.temperature_2m_max[0])}°</p>
+                    <p>Low: {Math.round(currentWeather.daily.temperature_2m_min[0])}°</p>
+                </div>
             </div>
             <div className="day-stats">
                 <h3 className="humidity-title">Humidity</h3>

@@ -3,7 +3,7 @@ import { useState, useEffect } from "react"
 export default function useWeather(){
     const [currentWeather, setWeather] = useState(null); // starts empty and it get filled later
 
-    const fetchWeather = async () => {
+    const fetchWeather = async() => {
         const response = await fetch('http://localhost:3001/weather')
         const data = await response.json()
         setWeather(data)
