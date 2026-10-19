@@ -3,7 +3,7 @@ import WeatherWidget from "./components/widgets/WeatherWidget"
 
 export default function App(){
   return(
-    <div>
+    <div className="flex items-center">
       <ClockWidget></ClockWidget>
       <WeatherWidget></WeatherWidget>
     </div>

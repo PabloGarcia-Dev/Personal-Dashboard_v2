@@ -17,7 +17,8 @@ export default function ClockWidget(){
     const ampm = hours >= 12 ? 'PM' : 'AM'
     hours = String(hours % 12 || 12).padStart(2, '0')
 
-    return <div className="Clock-Widget">
-        {hours}:{minutes}:{seconds} {ampm}
+    return <div className="flex justify-center size-fit  mx-12 font-bold">
+        <div className="text-[200px]">{hours}:{minutes}:{seconds}</div>
+        <div className="text-5xl pl-2 bottom-full size-fit mt-46">{ampm}</div>
     </div>
 }

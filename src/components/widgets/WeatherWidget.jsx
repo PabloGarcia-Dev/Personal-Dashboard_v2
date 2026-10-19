@@ -24,7 +24,7 @@ export default function WeatherWidget(){
     }
 
     return(
-        <div className="bg-white rounded-2x1 p-6 shadow-md">
+        <div className="bg-red-900 rounded-2x1 p-6 shadow-md">
             <div className="current-day-temp">
                 <h1>{Math.round(currentWeatherObj.temperature_2m)}°F</h1>
                 <p>{weatherCodes[currentWeatherObj.weather_code] || "Unknown Weather"}</p>
