@@ -8,9 +8,4 @@ app.use(cors())
 app.use('/weather', weatherRouter)
 app.use('/shuttle', shuttleRouter)
 
-app.get('/ping', (req, res) => {
-    res.json({ message: 'server is alive' })
-})
-
-
 app.listen(3001, () => console.log('Server running on port 3001'))

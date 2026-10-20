@@ -1,20 +1,21 @@
 import useShuttle from "../../hooks/useShuttle"
+import LastUpdated from "../auxiliary/LastUpdated"
 
 export default function ShuttleWidget(){
-    const {shuttlePath} = useShuttle()
-    console.log(shuttlePath)
+    const {shuttlePath, lastUpdated} = useShuttle()
     
     if(!shuttlePath) return <div>Loading Data...</div>
 
-    const nextBus = shuttlePath.Times[0]
-    const secondBus = shuttlePath.Times[1]
+    const nextBus = shuttlePath.Times[0] ? shuttlePath.Times[0].Text || `${Math.floor(shuttlePath.Times[0].Seconds / 60)} min away` : 'No incoming shuttles'
+    const secondBus =  shuttlePath.Times[1] ? shuttlePath.Times[1].Text || `${Math.floor(shuttlePath.Times[1].Seconds / 60)} min away` : 'No incoming shuttles'
 
     return(
         <div>
             <h3>Route Name: {shuttlePath.RouteDescription}</h3>
             <p>Stop being Tracked: {shuttlePath.StopDescription}</p>
-            <p>Upcoming: {nextBus ? nextBus.Text || `${Math.floor(nextBus.Seconds / 60)} min away` : 'No incoming shuttles'}</p>
-            <p>Following: {secondBus ? secondBus.Text || `${Math.floor(secondBus.Seconds / 60)} min away` : 'No incoming shuttles'}</p>
+            <p>Upcoming: {nextBus}</p>
+            <p>Following: {secondBus}</p>
+            <LastUpdated time={lastUpdated}></LastUpdated>
         </div>
     )
 }

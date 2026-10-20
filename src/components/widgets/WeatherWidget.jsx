@@ -1,7 +1,8 @@
 import useWeather from "../../hooks/useWeather";
+import LastUpdated from "../auxiliary/LastUpdated";
 
 export default function WeatherWidget(){
-    const {currentWeather} = useWeather()
+    const {currentWeather, lastUpdated} = useWeather()
 
     if(!currentWeather) return <div>Loading Weather...</div>
     
@@ -54,6 +55,9 @@ export default function WeatherWidget(){
                     <h3>UV Index</h3>
                     <p>{currentWeatherObj.uv_index}</p>
                 </div>
+            </div>
+            <div>
+                <LastUpdated time={lastUpdated}></LastUpdated>
             </div>
         </div>
     )
