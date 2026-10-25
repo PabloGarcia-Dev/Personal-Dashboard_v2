@@ -107,7 +107,7 @@ export default function SystemWidget(){
                 <StatCard label="Local IP" value={systemData.ip} />
             </div>
 
-            <div className="border-t border-gray-700 pt-3">
+            <div className="border-t border-gray-700 pt-3 text-white">
                 <LastUpdated time={lastUpdated} />
             </div>
         </div>
