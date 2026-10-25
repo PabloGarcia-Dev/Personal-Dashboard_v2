@@ -1,11 +1,6 @@
-import useWeather from "../../hooks/useWeather";
 import LastUpdated from "../auxiliary/LastUpdated";
 
-export default function WeatherWidget(){
-    const {currentWeather, lastUpdated} = useWeather()
-
-    if(!currentWeather) return <div>Loading Weather...</div>
-    
+export default function WeatherWidget({lastUpdated, currentWeather}){
     const currentWeatherObj = currentWeather.current;
     const weatherCodes = {
         0: "Clear Sky",

@@ -1,11 +1,7 @@
-import useShuttle from "../../hooks/useShuttle"
 import LastUpdated from "../auxiliary/LastUpdated"
 
-export default function ShuttleWidget(){
-    const {shuttlePath, lastUpdated} = useShuttle()
+export default function ShuttleWidget({lastUpdated, shuttlePath}){
     
-    if(!shuttlePath) return <div>Loading Data...</div>
-
     const nextBus = shuttlePath.Times[0] ? shuttlePath.Times[0].Text || `${Math.floor(shuttlePath.Times[0].Seconds / 60)} min away` : 'No incoming shuttles'
     const secondBus =  shuttlePath.Times[1] ? shuttlePath.Times[1].Text || `${Math.floor(shuttlePath.Times[1].Seconds / 60)} min away` : 'No incoming shuttles'
 
