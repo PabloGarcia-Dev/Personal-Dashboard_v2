@@ -17,8 +17,17 @@ export default function ClockWidget(){
     const ampm = hours >= 12 ? 'PM' : 'AM'
     hours = String(hours % 12 || 12).padStart(2, '0')
 
-    return <div className="flex justify-center size-fit  mx-12 font-bold p-0">
-        <div className="text-[200px]">{hours}:{minutes}:{seconds}</div>
-        <div className="text-5xl pl-2 bottom-full size-fit mt-46">{ampm}</div>
+    return (
+    <div className="bg-gray-800 rounded-2xl p-6 flex flex-col justify-center items-center h-full">
+        {/* Time */}
+        <div className="flex items-end gap-2">
+            <span className="text-[150px] font-bold text-white leading-none">{hours}:{minutes}:{seconds}</span>
+            <span className="text-6xl text-gray-400 mb-4">{ampm}</span>
+        </div>
+        {/* Date */}
+        <p className="text-4xl text-gray-400 mt-4">
+            {time.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' })}
+        </p>
     </div>
+)
 }
