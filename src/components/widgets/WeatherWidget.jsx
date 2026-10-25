@@ -1,7 +1,30 @@
 import LastUpdated from "../auxiliary/LastUpdated";
 
 export default function WeatherWidget({lastUpdated, currentWeather}){
-    if(!currentWeather) return <div>Loading Weather...</div>
+    if(!currentWeather) return (
+        <div className="bg-gray-800 rounded-2xl p-4 flex flex-col gap-3 flex-1 animate-pulse">
+            <div className="flex gap-6 flex-1 items-center">
+                <div className="flex flex-col gap-3 min-w-fit">
+                    <div className="h-16 w-32 bg-gray-700 rounded-xl"/>
+                    <div className="h-4 w-24 bg-gray-700 rounded-lg"/>
+                    <div className="h-4 w-20 bg-gray-700 rounded-lg"/>
+                    <div className="h-4 w-16 bg-gray-700 rounded-lg"/>
+                    <div className="h-4 w-16 bg-gray-700 rounded-lg"/>
+                </div>
+                <div className="w-px bg-gray-700 self-stretch"/>
+                <div className="flex flex-1 justify-around">
+                    {[...Array(6)].map((_, i) => (
+                        <div key={i} className="flex flex-col items-center gap-2">
+                            <div className="h-4 w-8 bg-gray-700 rounded"/>
+                            <div className="h-8 w-8 bg-gray-700 rounded-full"/>
+                            <div className="h-4 w-12 bg-gray-700 rounded"/>
+                            <div className="h-4 w-8 bg-gray-700 rounded"/>
+                        </div>
+                    ))}
+                </div>
+            </div>
+        </div>
+    )
 
     const currentWeatherObj = currentWeather.current;
     const weatherCodes = {

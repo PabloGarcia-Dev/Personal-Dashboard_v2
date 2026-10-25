@@ -18,7 +18,7 @@ export default function ClockWidget(){
     hours = String(hours % 12 || 12).padStart(2, '0')
 
     return (
-    <div className="bg-gray-800 rounded-2xl p-6 flex flex-col justify-center items-center h-full">
+    <div className="rounded-2xl p-6 flex flex-col justify-center items-center h-full">
         {/* Time */}
         <div className="flex items-end gap-2">
             <span className="text-[150px] font-bold text-white leading-none">{hours}:{minutes}:{seconds}</span>
