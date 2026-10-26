@@ -18,7 +18,7 @@ export default function StatsPage(){
                 <AdGuardWidget />
             </div>
             <div className="text-center text-gray-500 text-sm pb-2">
-                <p className="text-lg text-gray-400">Personal Dashboard v2.0</p>
+                <p className="text-lg text-gray-400">Personal Dashboard v2.2</p>
                 <p>Created by <span className="text-white font-bold">Pablo Garcia</span></p>
             </div>
         </div>

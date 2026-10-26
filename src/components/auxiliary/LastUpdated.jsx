@@ -7,8 +7,8 @@ export default function LastUpdated({time}){
     hours = String(hours % 12 || 12).padStart(2, '0')
 
     return(
-        <div>
-            <p>{hours}:{minutes} {ampm}</p>
+        <div className="text-2xl font-bold">
+            <p>Last Updated: {hours}:{minutes} {ampm}</p>
         </div>
     )
 }

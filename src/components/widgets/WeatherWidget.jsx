@@ -72,7 +72,7 @@ export default function WeatherWidget({lastUpdated, currentWeather, daily}){
         <div className="bg-gray-800 rounded-2xl p-4 flex gap-6 h-full">
             
             {/* Left: current weather */}
-            <div className="flex flex-col text-white min-w-[250px] justify-center gap-5 py-2">
+            <div className="flex flex-col text-white min-w-[250px] justify-center gap-5 py-2 p-7">
                 <h1 className="text-9xl font-bold">{Math.round(currentWeatherObj.temperature_2m)}°</h1>
                 <p className="text-4xl text-gray-300">{weatherCodes[currentWeatherObj.weather_code] || "Unknown"}</p>
                 <p className="text-2xl text-gray-400">H: {Math.round(currentWeather.daily.temperature_2m_max[0])}° L: {Math.round(currentWeather.daily.temperature_2m_min[0])}°</p>

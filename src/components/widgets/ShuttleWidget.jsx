@@ -46,23 +46,22 @@ export default function ShuttleWidget({lastUpdated, shuttlePath}){
     )
 
     const routeColor = shuttlePath.Color || '#30FF91'
-    const secondBus = getBusInfo(shuttlePath.Times[1])
 
     const BusCard = ({ bus, label }) => {
         return (
-            <div className={`flex items-center justify-between p-3 rounded-xl ${bus.isArriving ? 'bg-green-900/40 border border-green-500/50' : 'bg-gray-700'}`}>
+            <div className={`flex items-center justify-between p-4 rounded-xl h-[150px] ${bus.isArriving ? 'bg-green-900/40 border border-green-500/50' : 'bg-gray-700'}`}>
                 <div className="flex flex-col">
-                    <span className="text-gray-400 text-xs uppercase tracking-wide">{label}</span>
-                    <span className={`text-2xl font-bold ${bus.isArriving ? 'text-green-400' : 'text-white'}`}>
+                    <span className="text-gray-400 text-xl uppercase tracking-wide">{label}</span>
+                    <span className={`text-5xl font-bold ${bus.isArriving ? 'text-green-400' : 'text-white'}`}>
                         {bus.isArriving ? '🚨 Arriving!' : `${bus.minutes} min`}
                     </span>
-                    <span className="text-gray-400 text-sm">at {bus.arrivalTime}</span>
+                    <span className="text-gray-400 text-xl">at {bus.arrivalTime}</span>
                 </div>
                 <div className="flex flex-col items-end gap-1">
-                    <span className={`text-xs px-2 py-1 rounded-full ${bus.onTime ? 'bg-green-900 text-green-400' : 'bg-red-900 text-red-400'}`}>
+                    <span className={`text-xl px-2 py-1 rounded-full ${bus.onTime ? 'bg-green-900 text-green-400' : 'bg-red-900 text-red-400'}`}>
                         {bus.onTime ? 'On Time' : 'Delayed'}
                     </span>
-                    <span className="text-gray-500 text-xs">Bus #{bus.vehicleId}</span>
+                    <span className="text-gray-500 text-xl">Bus #{bus.vehicleId}</span>
                 </div>
             </div>
         )
@@ -73,8 +72,8 @@ export default function ShuttleWidget({lastUpdated, shuttlePath}){
             <div className="flex items-center gap-3">
                 <span className="text-3xl">🚌</span>
                 <div>
-                    <h3 className="text-xl font-bold text-green-400">Route 2</h3>
-                    <p className="text-gray-400 text-sm">Boardwalk Apt Stop 1</p>
+                    <h3 className="text-3xl font-bold text-green-400">Route 2</h3>
+                    <p className="text-gray-400 text-2xl">Boardwalk Apt Stop 1</p>
                 </div>
             </div>
             <div className="border-t border-gray-700" />
@@ -89,12 +88,12 @@ export default function ShuttleWidget({lastUpdated, shuttlePath}){
             
             {/* Header */}
             <div className="flex items-center gap-3">
-                <span className="text-3xl">🚌</span>
+                <span className="text-6xl">🚌</span>
                 <div>
-                    <h3 className="text-white font-bold text-xl" style={{color: routeColor}}>
+                    <h3 className="text-white font-bold text-2xl" style={{color: routeColor}}>
                         {shuttlePath.RouteDescription}
                     </h3>
-                    <p className="text-gray-400 text-sm">{shuttlePath.StopDescription}</p>
+                    <p className="text-gray-400 text-2xl">{shuttlePath.StopDescription}</p>
                 </div>
             </div>
 
@@ -102,14 +101,12 @@ export default function ShuttleWidget({lastUpdated, shuttlePath}){
             <div className="border-t border-gray-700" />
 
             {/* Bus arrivals */}
-            {/* Bus arrivals */}
             <div className="flex flex-col gap-3 flex-1">
-                <BusCard bus={nextBus} label="Next" />
-                {secondBus && <BusCard bus={secondBus} label="Following" />}
+                <BusCard bus={nextBus} label="Next Shuttle" />
             </div>
 
             {/* Footer */}
-            <div className="border-t border-gray-700 pt-3">
+            <div className="border-t border-gray-700 pt-3 text-white">
                 <LastUpdated time={lastChanged} />
             </div>
         </div>

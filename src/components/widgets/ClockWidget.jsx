@@ -25,7 +25,7 @@ export default function ClockWidget(){
             <span className="text-6xl text-gray-400 mb-4">{ampm}</span>
         </div>
         {/* Date */}
-        <p className="text-4xl text-gray-400 mt-4">
+        <p className="text-5xl text-gray-400 mt-4 tracking-wide">
             {time.toLocaleDateString('en-US', { weekday: 'long', month: 'short', day: 'numeric', year: 'numeric' })}
         </p>
     </div>
