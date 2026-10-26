@@ -30,7 +30,7 @@ export default function ShuttleWidget({lastUpdated, shuttlePath}){
     )
 
     if(shuttlePath.noService) return (
-        <div className="bg-gray-800 rounded-2xl p-6 h-full flex flex-col gap-4">
+        <div className="bg-gray-800 rounded-2xl p-4 w-full h-full flex flex-col gap-3">
             <div className="flex items-center gap-3">
                 <span className="text-3xl">🚌</span>
                 <div>
@@ -69,7 +69,7 @@ export default function ShuttleWidget({lastUpdated, shuttlePath}){
     }
 
     if(!shuttlePath || shuttlePath.Times.length === 0) return (
-        <div className="bg-gray-800 rounded-2xl p-6 h-full flex flex-col gap-4">
+        <div className="bg-gray-800 rounded-2xl p-4 w-full h-full flex flex-col gap-3">
             <div className="flex items-center gap-3">
                 <span className="text-3xl">🚌</span>
                 <div>
@@ -85,7 +85,7 @@ export default function ShuttleWidget({lastUpdated, shuttlePath}){
     )
 
     return(
-        <div className="bg-gray-800 rounded-2xl p-6 h-full flex flex-col gap-4">
+        <div className="bg-gray-800 rounded-2xl p-4 w-full h-full flex flex-col gap-3">
             
             {/* Header */}
             <div className="flex items-center gap-3">
