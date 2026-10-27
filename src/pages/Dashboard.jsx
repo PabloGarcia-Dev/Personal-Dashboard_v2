@@ -4,11 +4,13 @@ import WeatherWidget from "../components/widgets/WeatherWidget"
 import LaundryWidget from "../components/widgets/LaundryWidget"
 import useWeather from "../hooks/useWeather"
 import useShuttle from "../hooks/useShuttle"
+import useLaundry from "../hooks/useLaundry"
 import { useNavigate } from 'react-router-dom'
 
 export default function Dashboard(){
   const {currentWeather, lastUpdatedWeather} = useWeather()
   const {shuttlePath, lastUpdatedShuttle} = useShuttle()
+  const { laundryData, lastUpdated: lastUpdatedLaundry } = useLaundry()
   const navigate = useNavigate()
 
   return(
@@ -33,7 +35,7 @@ export default function Dashboard(){
                     <ShuttleWidget shuttlePath={shuttlePath} lastUpdated={lastUpdatedShuttle} />
                 </div>
                 <div className="w-[580px] h-[500px]">
-                    <LaundryWidget />
+                    <LaundryWidget laundryData={laundryData} lastUpdated={lastUpdatedLaundry}/>
                 </div>
             </div>
         </div>
