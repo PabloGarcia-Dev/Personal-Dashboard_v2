@@ -29,13 +29,14 @@ export default function ShuttleWidget({lastUpdated, shuttlePath}){
         </div>
     )
 
+    // No Service
     if(shuttlePath.noService) return (
         <div className="bg-gray-800 rounded-2xl p-4 w-full h-full flex flex-col gap-3">
             <div className="flex items-center gap-3">
-                <span className="text-3xl">🚌</span>
+                <span className="text-6xl">🚌</span>
                 <div>
-                    <h3 className="text-xl font-bold text-green-400">Route 2</h3>
-                    <p className="text-gray-400 text-sm">Boardwalk Apt Stop 1</p>
+                    <h3 className="text-3xl font-bold text-green-400">Route 2</h3>
+                    <p className="text-gray-400 text-2xl">Boardwalk Apt Stop 1</p>
                 </div>
             </div>
             <div className="border-t border-gray-700" />
@@ -67,10 +68,10 @@ export default function ShuttleWidget({lastUpdated, shuttlePath}){
         )
     }
 
-    if(!shuttlePath || shuttlePath.Times.length === 0) return (
+    if(shuttlePath.Times.length === 0) return(
         <div className="bg-gray-800 rounded-2xl p-4 w-full h-full flex flex-col gap-3">
             <div className="flex items-center gap-3">
-                <span className="text-3xl">🚌</span>
+                <span className="text-6xl">🚌</span>
                 <div>
                     <h3 className="text-3xl font-bold text-green-400">Route 2</h3>
                     <p className="text-gray-400 text-2xl">Boardwalk Apt Stop 1</p>
@@ -90,7 +91,7 @@ export default function ShuttleWidget({lastUpdated, shuttlePath}){
             <div className="flex items-center gap-3">
                 <span className="text-6xl">🚌</span>
                 <div>
-                    <h3 className="text-white font-bold text-2xl" style={{color: routeColor}}>
+                    <h3 className="text-white font-bold text-3xl" style={{color: routeColor}}>
                         {shuttlePath.RouteDescription}
                     </h3>
                     <p className="text-gray-400 text-2xl">{shuttlePath.StopDescription}</p>
