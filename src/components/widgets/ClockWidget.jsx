@@ -21,7 +21,7 @@ export default function ClockWidget(){
     <div className="rounded-2xl p-6 flex flex-col justify-center items-center h-full">
         {/* Time */}
         <div className="flex items-end gap-2">
-            <span className="text-[150px] font-bold text-white leading-none">{hours}:{minutes}:{seconds}</span>
+            <span className="text-[clamp(60px,7.5vw,150px)] font-bold text-white leading-none">{hours}:{minutes}:{seconds}</span>
             <span className="text-6xl text-gray-400 mb-4">{ampm}</span>
         </div>
         {/* Date */}

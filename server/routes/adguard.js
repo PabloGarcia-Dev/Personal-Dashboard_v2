@@ -3,10 +3,9 @@ const router = express.Router()
 
 router.get('/', async (req, res) => {
     try {
-        const response = await fetch('http://localhost/control/stats', {
-            headers: {
-                'Authorization': 'Basic Y3loYXdrMTg6UDE0ZzM2MjJfQA=='
-            }
+        const auth = Buffer.from(`${process.env.ADGUARD_USER}:${process.env.ADGUARD_PASS}`).toString('base64')
+        const response = await fetch(`${process.env.ADGUARD_URL}/control/stats`, {
+            headers: { 'Authorization': `Basic ${auth}` }
         })
         if(!response.ok) throw new Error('AdGuard unreachable')
         const data = await response.json()

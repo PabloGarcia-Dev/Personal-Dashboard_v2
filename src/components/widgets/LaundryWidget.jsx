@@ -76,7 +76,13 @@ export default function LaundryWidget( {laundryData, lastUpdated} ){
                 <span className="text-6xl">🫧</span>
                 <h3 className="text-white font-bold text-2xl">Laundry</h3>
             </div>
-            <p className="text-gray-500 text-sm">Sensor offline</p>
+
+            {/* Divider */}
+            <div className="border-t border-gray-700 mt-3" />
+
+            <div className="flex flex-1 items-center justify-center">
+                <p className="text-gray-500 text-sm">Sensor offline</p>
+            </div>
         </div>
     )
 
@@ -88,6 +94,9 @@ export default function LaundryWidget( {laundryData, lastUpdated} ){
                 <span className="text-6xl">🫧</span>
                 <h3 className="text-white font-bold text-2xl">Laundry</h3>
             </div>
+
+            {/* Divider */}
+            <div className="border-t border-gray-700" />
 
             {/* Machine cards */}
             <div className="flex flex-col gap-2 flex-1">

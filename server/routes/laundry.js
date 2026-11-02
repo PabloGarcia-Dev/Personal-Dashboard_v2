@@ -3,7 +3,7 @@ const router = express.Router()
 
 router.get('/', async (req, res) => {
     try {
-        const response = await fetch('http://192.168.0.194/status')
+        const response = await fetch(`${process.env.ESP32_URL}/status`)
         const data = await response.json()
         res.json(data)
     } catch(error) {
