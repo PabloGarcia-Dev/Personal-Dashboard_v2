@@ -5,7 +5,6 @@
 
 // MPU-6050 (washer)
 const int MPU_ADDR = 0x68;
-const int ACCEL_THRESH = 800;          // raw units, 16384 = 1g. Tune this.
 const unsigned long SAMPLE_MS = 20;    // 50 samples/sec
 unsigned long lastSample = 0;
 float lastMag = 0;
@@ -21,8 +20,9 @@ int washerScore = 0, dryerScore = 0;
 int washerRate = 0, dryerRate = 0;
 unsigned long lastTick = 0;
 
-const int WASHER_MIN_PULSES = 5;   // MPU rate is noisier, needs a higher bar
-const int DRYER_MIN_PULSES = 2;
+int ACCEL_THRESH = 800;          // washer: jump size that counts as a pulse
+int WASHER_MIN_PULSES = 5;       // washer: pulses/sec to count as active
+const int DRYER_MIN_PULSES = 2;        // dryer: pulses/sec to count as active
 const int ON_SCORE  = 15;
 const int OFF_SCORE = 5;    // turns off at or below this
 const int MAX_SCORE = 30;   // was 60
