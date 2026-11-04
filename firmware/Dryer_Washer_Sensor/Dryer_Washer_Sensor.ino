@@ -31,7 +31,7 @@ const int MAX_SCORE           = 30;
 const int DECAY               = 3;
 
 // ---------- Washer sliding window ----------
-const int WIN = 300;             // seconds of history (5 min)
+const int WIN = 120;             // seconds of history (2 min)
 bool winBuf[WIN] = {false};
 int winIdx = 0, winCount = 0;
 
