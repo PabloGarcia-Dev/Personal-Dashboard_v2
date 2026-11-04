@@ -213,10 +213,10 @@ Mount each sensor rigidly to its machine's panel, leave slack in the wires, and 
 
 ## Authors
 
-Built by **Pablo Garcia**
+Built by **Pablo Garcia** | Idea by **Alexander Grigalashvili** and **Pablo Garcia**
 
 ---
 
-<img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/33191b6b-b61c-4e2d-b11d-d00e6d34234f" />
+<img width="2560" height="1440" alt="image" src="https://github.com/user-attachments/assets/e7e5f4c3-8d62-44e1-9386-fdb88cbccd6c" />
 
 ---
