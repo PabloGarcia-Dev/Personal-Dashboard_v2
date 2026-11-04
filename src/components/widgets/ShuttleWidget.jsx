@@ -37,7 +37,7 @@ export default function ShuttleWidget({lastUpdated, shuttlePath, gameDayRoute}){
                 <div className="flex flex-col">
                     <span className="text-gray-400 text-xl uppercase tracking-wide">{label}</span>
                     <span className={`my-5 text-5xl font-bold ${bus.isArriving ? 'text-green-400' : 'text-white'}`}>
-                        {bus.isArriving ? '🚨 Arriving!' : `${bus.minutes} min`}
+                        {(bus.minutes <= 2) ? '🚨 Arriving!' : `${bus.minutes} min`}
                     </span>
                     <span className="text-gray-400 text-2xl">at {bus.arrivalTime}</span>
                 </div>
