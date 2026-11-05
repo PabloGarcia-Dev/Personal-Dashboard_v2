@@ -15,9 +15,15 @@ app.use('/shuttle', shuttleRouter)
 app.use('/system', systemRouter)
 app.use('/adguard', adguardRouter)
 app.use('/laundry', laundryRouter)
+app.use(express.json());
 
 // Serve built React app (For the Pi)
 app.use(express.static(path.join(__dirname, '..')))
+
+app.post('/crash', (req, res) => {
+  console.log('CLIENT CRASH', JSON.stringify(req.body));
+  res.sendStatus(204);
+});
 
 // Catch-all for React Router (for the Pi)
 app.get('/{*path}', (req, res) => {
