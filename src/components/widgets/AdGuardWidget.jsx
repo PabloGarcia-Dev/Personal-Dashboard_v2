@@ -63,7 +63,7 @@ export default function AdGuardWidget(){
                 </div>
             </div>
 
-            <div className="border-t border-gray-700 pt-3">
+            <div className="border-t border-gray-700 pt-3 text-white">
                 <LastUpdated time={lastUpdated} />
             </div>
         </div>
